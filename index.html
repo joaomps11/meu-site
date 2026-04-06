@@ -37,6 +37,7 @@ nav {
     display: flex;
     justify-content: space-between;
     backdrop-filter: blur(10px);
+    z-index:1000;
 }
 
 body.dark nav {background: rgba(2,6,23,0.8);}
@@ -45,6 +46,7 @@ body.light nav {background: rgba(255,255,255,0.8);}
 nav a {
     margin-left: 20px;
     text-decoration: none;
+    font-weight:500;
 }
 
 body.dark nav a {color:white;}
@@ -76,7 +78,7 @@ nav a:hover {color:#38bdf8;}
     transition: all 0.4s ease;
 }
 
-/* HOVER FORTE */
+/* HOVER FOTO */
 .hero-img img:hover {
     transform: scale(1.08);
 }
@@ -87,15 +89,14 @@ body.dark .hero-img img {
     box-shadow:0 0 40px rgba(56,189,248,0.5);
 }
 
+body.dark .hero-img img:hover {
+    box-shadow:0 0 70px rgba(56,189,248,0.9);
+}
+
 /* LIGHT FOTO */
 body.light .hero-img img {
     border:3px solid #1d4ed8;
     box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* HOVER GLOW */
-body.dark .hero-img img:hover {
-    box-shadow:0 0 70px rgba(56,189,248,0.9);
 }
 
 body.light .hero-img img:hover {
@@ -130,24 +131,27 @@ h2 {
 body.dark h2 {color:#38bdf8;}
 body.light h2 {color:#1d4ed8;}
 
-/* CARDS */
+/* GRID */
 .projects, .skills {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    gap:25px;
 }
 
-.project-card:hover {
-    transform:scale(1.05);
-    background:#2563eb;
-    color:white;
-    cursor: pointer;
+/* CARDS BASE */
+.project-card, .skill-card {
+    padding:25px;
+    border-radius:14px;
+    transition: all 0.3s ease;
+    cursor:pointer;
 }
 
 /* DARK CARDS */
 body.dark .project-card,
 body.dark .skill-card {
-    background:#1e293b;
+    background: rgba(30,41,59,0.7);
+    backdrop-filter: blur(10px);
+    border:1px solid rgba(255,255,255,0.05);
 }
 
 /* LIGHT CARDS */
@@ -159,20 +163,29 @@ body.light .skill-card {
 
 /* HOVER PROJETOS */
 .project-card:hover {
-    transform:scale(1.05);
-    background:#2563eb;
-    color:white;
+    transform: translateY(-8px) scale(1.02);
+    border:1px solid #38bdf8;
+    box-shadow:0 10px 30px rgba(56,189,248,0.2);
 }
 
 /* HOVER SKILLS */
 .skill-card:hover {
-    transform:translateY(-10px);
+    transform: translateY(-8px);
     border:1px solid #38bdf8;
+}
+
+/* TITULO HOVER */
+.project-card h3 {
+    margin-bottom:10px;
+    transition:0.3s;
+}
+
+.project-card:hover h3 {
+    color:#38bdf8;
 }
 
 /* TEXTO */
 p {
-    margin-bottom:10px;
     line-height:1.6;
 }
 
@@ -225,15 +238,15 @@ p {
 <div id="sobre" class="section">
     <h2>Sobre Mim</h2>
     <p>
-        Sou estudante de Ciência da Computação na Universidade Católica de Pernambuco (UNICAP), atualmente no 5º período.
-        Ao longo da minha formação, desenvolvi base sólida em programação e participei de projetos acadêmicos relevantes.
+        Sou estudante de Ciência da Computação na UNICAP, atualmente no 5º período.
+        Ao longo da graduação, venho desenvolvendo uma base sólida em programação e participando de projetos acadêmicos.
     </p>
     <p>
-        Tenho experiência com desenvolvimento web e integração de hardware, utilizando tecnologias como Python, Java, HTML, CSS e SQL.
-        Essas experiências fortaleceram minha capacidade de resolver problemas e trabalhar em equipe.
+        Tenho experiência com desenvolvimento web e integração de hardware, utilizando Python, Java, HTML, CSS e SQL.
+        Essas vivências fortaleceram minha lógica, autonomia e trabalho em equipe.
     </p>
     <p>
-        Busco constantemente evoluir, aprender novas tecnologias e construir soluções eficientes.
+        Estou em constante evolução, buscando aprimorar minhas habilidades e construir soluções cada vez mais eficientes.
     </p>
 </div>
 
@@ -245,17 +258,17 @@ p {
 
         <div class="project-card" onclick="location.href='afa.html'">
             <h3>Projeto AFA</h3>
-            <p>Site institucional para projeto social de alfabetização infantil.</p>
+            <p>Site institucional para alfabetização infantil com foco em organização e usabilidade.</p>
         </div>
 
         <div class="project-card" onclick="location.href='raspberry.html'">
             <h3>Raspberry Pi</h3>
-            <p>Projeto de automação com integração de hardware e IoT.</p>
+            <p>Automação com integração entre hardware e software utilizando Python.</p>
         </div>
 
         <div class="project-card" onclick="location.href='liceu.html'">
             <h3>Projeto LICEU</h3>
-            <p>Desenvolvimento front-end de sistema web acadêmico.</p>
+            <p>Desenvolvimento front-end de sistema acadêmico em equipe.</p>
         </div>
 
     </div>
@@ -284,7 +297,7 @@ p {
 
         <div class="skill-card">
             <h3>HTML & CSS</h3>
-            <p>Desenvolvimento de interfaces web responsivas.</p>
+            <p>Desenvolvimento de interfaces modernas e responsivas.</p>
         </div>
 
     </div>
@@ -294,13 +307,13 @@ p {
 <div id="objetivo" class="section">
     <h2>Objetivo Profissional</h2>
     <p>
-        Busco oportunidades na área de desenvolvimento de software para aplicar meus conhecimentos e evoluir continuamente como profissional.
+        Busco oportunidades na área de desenvolvimento de software para aplicar meus conhecimentos na prática.
     </p>
     <p>
         Tenho como objetivo atuar em empresas de grande porte ou multinacionais, contribuindo com soluções tecnológicas relevantes.
     </p>
     <p>
-        Pretendo me especializar em áreas da computação e construir uma carreira sólida baseada em aprendizado contínuo.
+        Pretendo me especializar na área e construir uma carreira sólida baseada em aprendizado contínuo.
     </p>
 </div>
 
