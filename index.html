@@ -9,9 +9,13 @@
 <style>
 * {margin:0;padding:0;box-sizing:border-box;}
 
+/* TRANSIÇÃO GLOBAL SUAVE */
+body, nav, .project-card, .skill-card, .hero-img img {
+    transition: all 0.4s ease;
+}
+
 body {
     font-family:'Poppins',sans-serif;
-    transition:0.4s;
 }
 
 /* DARK */
@@ -75,7 +79,6 @@ nav a:hover {color:#38bdf8;}
 .hero-img img {
     width:380px;
     border-radius:20px;
-    transition: all 0.4s ease;
 }
 
 /* HOVER FOTO */
@@ -142,17 +145,11 @@ body.light h2 {color:#1d4ed8;}
 .project-card, .skill-card {
     padding:25px;
     border-radius:14px;
-    transition: all 0.3s ease;
 }
 
 /* CURSOR */
-.project-card {
-    cursor:pointer;
-}
-
-.skill-card {
-    cursor: default;
-}
+.project-card {cursor:pointer;}
+.skill-card {cursor: default;}
 
 /* DARK CARDS */
 body.dark .project-card,
@@ -213,7 +210,7 @@ p {
 </style>
 </head>
 
-<body class="dark">
+<body>
 
 <nav>
     <strong>João Marcos</strong>
@@ -335,11 +332,21 @@ function toggleTheme(){
         body.classList.remove("dark");
         body.classList.add("light");
         btn.innerText = "☀️";
+        localStorage.setItem("theme","light");
     } else {
         body.classList.remove("light");
         body.classList.add("dark");
         btn.innerText = "🌙";
+        localStorage.setItem("theme","dark");
     }
+}
+
+window.onload = function(){
+    let savedTheme = localStorage.getItem("theme") || "dark";
+    document.body.classList.add(savedTheme);
+
+    let btn = document.getElementById("themeBtn");
+    btn.innerText = savedTheme === "dark" ? "🌙" : "☀️";
 }
 </script>
 
