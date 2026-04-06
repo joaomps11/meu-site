@@ -72,7 +72,12 @@ nav a:hover {color:#38bdf8;}
 .hero-img img {
     width:380px;
     border-radius:20px;
-    transition:0.3s;
+    transition:0.4s;
+}
+
+/* HOVER + GLOW */
+.hero-img img:hover {
+    transform: scale(1.05);
 }
 
 body.dark .hero-img img {
@@ -125,29 +130,32 @@ body.light h2 {color:#1d4ed8;}
     transition:0.3s;
 }
 
+/* DARK CARDS */
 body.dark .project-card,
 body.dark .skill-card {
     background:#1e293b;
 }
 
+/* LIGHT CARDS */
 body.light .project-card,
 body.light .skill-card {
     background:white;
     box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-.project-card {
-    cursor:pointer;
-}
-
+/* HOVER PREMIUM */
 .project-card:hover {
     transform:scale(1.05);
+    background:#2563eb;
+    color:white;
 }
 
 .skill-card:hover {
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+    border:1px solid #38bdf8;
 }
 
+/* TEXTO */
 p {
     margin-bottom:10px;
     line-height:1.6;
@@ -202,15 +210,15 @@ p {
 <div id="sobre" class="section">
     <h2>Sobre Mim</h2>
     <p>
-        Sou estudante de Ciência da Computação na Universidade Católica de Pernambuco (UNICAP), atualmente no 5º período do curso.
-        Ao longo da minha formação, venho desenvolvendo uma base sólida em programação, lógica computacional e desenvolvimento de sistemas.
+        Sou estudante de Ciência da Computação na Universidade Católica de Pernambuco (UNICAP), atualmente no 5º período.
+        Ao longo da minha formação, desenvolvi base sólida em programação e participei de projetos acadêmicos relevantes.
     </p>
     <p>
-        Já participei de projetos acadêmicos envolvendo desenvolvimento web e integração de hardware, aplicando tecnologias como Python, HTML e CSS.
-        Essas experiências fortaleceram minhas habilidades técnicas, trabalho em equipe e resolução de problemas.
+        Tenho experiência com desenvolvimento web e integração de hardware, utilizando tecnologias como Python, Java, HTML, CSS e SQL.
+        Essas experiências fortaleceram minha capacidade de resolver problemas e trabalhar em equipe.
     </p>
     <p>
-        Busco constantemente evoluir, aprender novas tecnologias e construir soluções eficientes e bem estruturadas.
+        Busco constantemente evoluir, aprender novas tecnologias e construir soluções eficientes.
     </p>
 </div>
 
@@ -255,11 +263,6 @@ p {
         </div>
 
         <div class="skill-card">
-            <h3>C</h3>
-            <p>Base sólida em lógica de programação e algoritmos.</p>
-        </div>
-
-        <div class="skill-card">
             <h3>SQL</h3>
             <p>Manipulação de banco de dados e consultas.</p>
         </div>
@@ -276,13 +279,13 @@ p {
 <div id="objetivo" class="section">
     <h2>Objetivo Profissional</h2>
     <p>
-        Busco oportunidades na área de desenvolvimento de software para aplicar meus conhecimentos em ambientes reais e evoluir continuamente como profissional.
+        Busco oportunidades na área de desenvolvimento de software para aplicar meus conhecimentos e evoluir continuamente como profissional.
     </p>
     <p>
         Tenho como objetivo atuar em empresas de grande porte ou multinacionais, contribuindo com soluções tecnológicas relevantes.
     </p>
     <p>
-        Pretendo me especializar em áreas da computação, construindo uma carreira sólida baseada em aprendizado contínuo e crescimento profissional.
+        Pretendo me especializar em áreas da computação e construir uma carreira sólida baseada em aprendizado contínuo.
     </p>
 </div>
 
