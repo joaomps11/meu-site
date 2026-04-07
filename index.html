@@ -9,13 +9,13 @@
 <style>
 * {margin:0;padding:0;box-sizing:border-box;}
 
-/* TRANSIÇÃO GLOBAL SUAVE */
-body, nav, .project-card, .skill-card, .hero-img img {
-    transition: all 0.4s ease;
-}
-
 body {
     font-family:'Poppins',sans-serif;
+}
+
+/* REMOVE ANIMAÇÃO NO LOAD */
+body.no-transition * {
+    transition: none !important;
 }
 
 /* DARK */
@@ -50,7 +50,7 @@ body.light nav {background: rgba(255,255,255,0.8);}
 nav a {
     margin-left: 20px;
     text-decoration: none;
-    font-weight:500;
+    transition:0.3s;
 }
 
 body.dark nav a {color:white;}
@@ -75,38 +75,26 @@ nav a:hover {color:#38bdf8;}
     padding:0 10%;
 }
 
-/* FOTO */
 .hero-img img {
-    width:380px;
+    width:400px;
     border-radius:20px;
+    transition:0.4s;
 }
 
-/* HOVER FOTO */
 .hero-img img:hover {
     transform: scale(1.08);
 }
 
-/* DARK FOTO */
 body.dark .hero-img img {
     border:3px solid #38bdf8;
-    box-shadow:0 0 40px rgba(56,189,248,0.5);
+    box-shadow:0 0 50px rgba(56,189,248,0.6);
 }
 
-body.dark .hero-img img:hover {
-    box-shadow:0 0 70px rgba(56,189,248,0.9);
-}
-
-/* LIGHT FOTO */
 body.light .hero-img img {
     border:3px solid #1d4ed8;
     box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-body.light .hero-img img:hover {
-    box-shadow:0 20px 40px rgba(0,0,0,0.2);
-}
-
-/* TEXTO */
 .hero-text {
     max-width:500px;
 }
@@ -134,32 +122,26 @@ h2 {
 body.dark h2 {color:#38bdf8;}
 body.light h2 {color:#1d4ed8;}
 
-/* GRID */
+/* CARDS */
 .projects, .skills {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    gap:20px;
 }
 
-/* CARDS */
 .project-card, .skill-card {
     padding:25px;
-    border-radius:14px;
+    border-radius:12px;
+    transition:0.3s;
 }
 
-/* CURSOR */
-.project-card {cursor:pointer;}
-.skill-card {cursor: default;}
-
-/* DARK CARDS */
+/* DARK */
 body.dark .project-card,
 body.dark .skill-card {
-    background: rgba(30,41,59,0.7);
-    backdrop-filter: blur(10px);
-    border:1px solid rgba(255,255,255,0.05);
+    background:#1e293b;
 }
 
-/* LIGHT CARDS */
+/* LIGHT */
 body.light .project-card,
 body.light .skill-card {
     background:white;
@@ -167,32 +149,26 @@ body.light .skill-card {
 }
 
 /* HOVER PROJETOS */
+.project-card {
+    cursor:pointer;
+}
+
 .project-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border:1px solid #38bdf8;
-    box-shadow:0 10px 30px rgba(56,189,248,0.2);
+    transform:translateY(-8px) scale(1.02);
+    background:#2563eb;
+    color:white;
 }
 
 /* HOVER SKILLS */
 .skill-card:hover {
-    transform: translateY(-8px);
+    transform:translateY(-8px);
     border:1px solid #38bdf8;
-}
-
-/* TITULO HOVER */
-.project-card h3 {
-    margin-bottom:10px;
-    transition:0.3s;
-}
-
-.project-card:hover h3 {
-    color:#38bdf8;
 }
 
 /* TEXTO */
 p {
-    line-height:1.6;
     margin-bottom:10px;
+    line-height:1.6;
 }
 
 /* RESPONSIVO */
@@ -243,16 +219,19 @@ p {
 <!-- SOBRE -->
 <div id="sobre" class="section">
     <h2>Sobre Mim</h2>
+
     <p>
-        Sou estudante de Ciência da Computação na Universidade Católica de Pernambuco (UNICAP), atualmente no 5º período do curso.
-        Ao longo da minha formação, venho desenvolvendo uma base sólida em programação, lógica computacional e desenvolvimento de sistemas.
+    Sou estudante de Ciência da Computação na Universidade Católica de Pernambuco (UNICAP), atualmente no 5º período.
+    Ao longo da graduação, desenvolvi uma base sólida em programação, lógica computacional e desenvolvimento de sistemas.
     </p>
+
     <p>
-        Já participei de projetos acadêmicos envolvendo desenvolvimento web e integração de hardware, aplicando tecnologias como Python, Java, HTML, CSS e SQL.
-        Essas experiências fortaleceram minhas habilidades técnicas, trabalho em equipe e resolução de problemas.
+    Participei de projetos acadêmicos envolvendo desenvolvimento web e integração de hardware,
+    aplicando na prática conhecimentos em Python, Java, HTML, CSS e SQL.
     </p>
+
     <p>
-        Busco constantemente evoluir, aprender novas tecnologias e construir soluções eficientes e bem estruturadas.
+    Busco constantemente evoluir, aprender novas tecnologias e construir soluções eficientes e bem estruturadas.
     </p>
 </div>
 
@@ -263,18 +242,21 @@ p {
     <div class="projects">
 
         <div class="project-card" onclick="location.href='afa.html'">
-            <h3>Projeto AFA</h3>
-            <p>Site institucional para alfabetização infantil com foco em organização e usabilidade.</p>
+            <h3>Projeto AFA – UNICAP</h3>
+            <p>Site institucional para alfabetização infantil.</p>
+            <p><strong>Tecnologias:</strong> HTML, CSS, Vercel</p>
         </div>
 
         <div class="project-card" onclick="location.href='raspberry.html'">
             <h3>Raspberry Pi</h3>
-            <p>Automação com integração entre hardware e software utilizando Python.</p>
+            <p>Automação e integração hardware/software.</p>
+            <p><strong>Tecnologias:</strong> Python</p>
         </div>
 
         <div class="project-card" onclick="location.href='liceu.html'">
             <h3>Projeto LICEU</h3>
-            <p>Desenvolvimento front-end de sistema acadêmico em equipe.</p>
+            <p>Desenvolvimento front-end acadêmico.</p>
+            <p><strong>Tecnologias:</strong> HTML, CSS</p>
         </div>
 
     </div>
@@ -288,22 +270,22 @@ p {
 
         <div class="skill-card">
             <h3>Python</h3>
-            <p>Automação e integração com hardware (Raspberry Pi).</p>
+            <p>Automação e integração com hardware.</p>
         </div>
 
         <div class="skill-card">
             <h3>Java</h3>
-            <p>Programação orientada a objetos em projetos acadêmicos.</p>
+            <p>Programação orientada a objetos.</p>
         </div>
 
         <div class="skill-card">
             <h3>SQL</h3>
-            <p>Manipulação de banco de dados e consultas.</p>
+            <p>Manipulação de banco de dados.</p>
         </div>
 
         <div class="skill-card">
             <h3>HTML & CSS</h3>
-            <p>Desenvolvimento de interfaces modernas e responsivas.</p>
+            <p>Desenvolvimento de interfaces web.</p>
         </div>
 
     </div>
@@ -312,18 +294,39 @@ p {
 <!-- OBJETIVO -->
 <div id="objetivo" class="section">
     <h2>Objetivo Profissional</h2>
+
     <p>
-        Busco oportunidades na área de desenvolvimento de software para aplicar meus conhecimentos acadêmicos em ambientes reais e evoluir constantemente como profissional.
+    Busco oportunidades na área de desenvolvimento de software para aplicar meus conhecimentos
+    e evoluir continuamente como profissional.
     </p>
+
     <p>
-        Tenho como objetivo atuar em empresas de grande porte ou multinacionais, contribuindo com soluções tecnológicas relevantes e adquirindo experiência prática no mercado.
+    Tenho como objetivo atuar em empresas de grande porte ou multinacionais,
+    contribuindo com soluções tecnológicas relevantes.
     </p>
+
     <p>
-        Pretendo me especializar em áreas específicas da computação, desenvolvendo uma carreira sólida baseada em aprendizado contínuo, inovação e crescimento profissional.
+    Pretendo me especializar em áreas da computação e construir uma carreira sólida.
     </p>
 </div>
 
 <script>
+window.onload = function(){
+    let body = document.body;
+
+    body.classList.add("no-transition");
+
+    let savedTheme = localStorage.getItem("theme") || "dark";
+    body.classList.add(savedTheme);
+
+    let btn = document.getElementById("themeBtn");
+    btn.innerText = savedTheme === "dark" ? "🌙" : "☀️";
+
+    setTimeout(() => {
+        body.classList.remove("no-transition");
+    }, 50);
+}
+
 function toggleTheme(){
     let body = document.body;
     let btn = document.getElementById("themeBtn");
@@ -331,22 +334,14 @@ function toggleTheme(){
     if(body.classList.contains("dark")){
         body.classList.remove("dark");
         body.classList.add("light");
-        btn.innerText = "☀️";
         localStorage.setItem("theme","light");
+        btn.innerText="☀️";
     } else {
         body.classList.remove("light");
         body.classList.add("dark");
-        btn.innerText = "🌙";
         localStorage.setItem("theme","dark");
+        btn.innerText="🌙";
     }
-}
-
-window.onload = function(){
-    let savedTheme = localStorage.getItem("theme") || "dark";
-    document.body.classList.add(savedTheme);
-
-    let btn = document.getElementById("themeBtn");
-    btn.innerText = savedTheme === "dark" ? "🌙" : "☀️";
 }
 </script>
 
