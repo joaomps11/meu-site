@@ -20,12 +20,10 @@ body {
     font-family:'Poppins',sans-serif;
 }
 
-/* REMOVE ANIMAÇÃO NO LOAD */
 .no-transition * {
     transition: none !important;
 }
 
-/* DARK */
 .dark body {
     background: radial-gradient(circle at 20% 30%, #1e3a8a, transparent 40%),
                 radial-gradient(circle at 80% 70%, #9333ea, transparent 40%),
@@ -33,13 +31,11 @@ body {
     color:#e2e8f0;
 }
 
-/* LIGHT */
 .light body {
     background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
     color:#0f172a;
 }
 
-/* NAV */
 nav {
     position: fixed;
     width: 100%;
@@ -73,7 +69,6 @@ nav a:hover {color:#38bdf8;}
     cursor:pointer;
 }
 
-/* HERO */
 .hero {
     height:100vh;
     display:flex;
@@ -117,7 +112,6 @@ nav a:hover {color:#38bdf8;}
     color:#38bdf8;
 }
 
-/* SEÇÕES */
 .section {
     padding:100px 10%;
 }
@@ -129,7 +123,6 @@ h2 {
 .dark h2 {color:#38bdf8;}
 .light h2 {color:#1d4ed8;}
 
-/* CARDS */
 .projects, .skills {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -142,50 +135,42 @@ h2 {
     transition:0.3s;
 }
 
-/* DARK */
 .dark .project-card,
 .dark .skill-card {
     background:#1e293b;
 }
 
-/* LIGHT */
 .light .project-card,
 .light .skill-card {
     background:white;
     box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* PROJETOS */
 .project-card {
     cursor:pointer;
 }
 
-/* HOVER CORRIGIDO DEFINITIVO */
 .project-card:hover {
     transform:translateY(-8px) scale(1.02);
     background: linear-gradient(135deg, #2563eb, #1d4ed8);
     box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
 }
 
-/* FORÇA TEXTO VISÍVEL */
 .project-card:hover,
 .project-card:hover * {
     color: #ffffff !important;
 }
 
-/* HABILIDADES */
 .skill-card:hover {
     transform:translateY(-8px);
     border:1px solid #38bdf8;
 }
 
-/* TEXTO */
 p {
     margin-bottom:10px;
     line-height:1.6;
 }
 
-/* RESPONSIVO */
 @media (max-width:900px){
     .hero {
         flex-direction:column;
@@ -214,7 +199,6 @@ p {
     </div>
 </nav>
 
-<!-- INICIO -->
 <div id="inicio" class="hero">
     <div class="hero-img">
         <img src="sua-foto.jpg">
@@ -230,7 +214,6 @@ p {
     </div>
 </div>
 
-<!-- SOBRE -->
 <div id="sobre" class="section">
     <h2>Sobre Mim</h2>
 
@@ -249,7 +232,6 @@ p {
     </p>
 </div>
 
-<!-- PROJETOS -->
 <div id="projetos" class="section">
     <h2>Projetos</h2>
 
@@ -276,7 +258,6 @@ p {
     </div>
 </div>
 
-<!-- HABILIDADES -->
 <div id="habilidades" class="section">
     <h2>Habilidades</h2>
 
@@ -305,7 +286,6 @@ p {
     </div>
 </div>
 
-<!-- OBJETIVO -->
 <div id="objetivo" class="section">
     <h2>Objetivo Profissional</h2>
 
