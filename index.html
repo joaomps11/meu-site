@@ -151,20 +151,20 @@ body.light .skill-card {
 /* PROJETOS */
 .project-card {
     cursor:pointer;
+    position: relative;
 }
 
-/* HOVER CORRIGIDO */
+/* HOVER CORRIGIDO DEFINITIVO */
 .project-card:hover {
     transform:translateY(-8px) scale(1.02);
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color:white;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
 }
 
-/* GARANTE TEXTO VISÍVEL */
-.project-card:hover h3,
-.project-card:hover p,
-.project-card:hover strong {
-    color:white;
+/* FORÇA TEXTO VISÍVEL */
+.project-card:hover,
+.project-card:hover * {
+    color: #ffffff !important;
 }
 
 /* HABILIDADES */
