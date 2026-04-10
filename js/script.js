@@ -1,30 +1,24 @@
-window.onload = function(){
+window.onload=function(){
 
-let savedTheme = localStorage.getItem("theme") || "dark"
+let savedTheme=localStorage.getItem("theme")||"dark"
 
 document.documentElement.classList.remove("dark","light")
 
 document.documentElement.classList.add(savedTheme)
 
-let btn = document.getElementById("themeBtn")
+let btn=document.getElementById("themeBtn")
 
-if(btn){
-btn.innerText = savedTheme === "dark" ? "🌙" : "☀️"
-}
+btn.innerText=savedTheme==="dark"?"🌙":"☀️"
 
-let ano = document.getElementById("ano")
-
-if(ano){
-ano.textContent = new Date().getFullYear()
-}
+document.getElementById("ano").textContent=new Date().getFullYear()
 
 }
 
 function toggleTheme(){
 
-let html = document.documentElement
+let html=document.documentElement
 
-let btn = document.getElementById("themeBtn")
+let btn=document.getElementById("themeBtn")
 
 if(html.classList.contains("dark")){
 
@@ -60,7 +54,7 @@ let mensagem=document.getElementById("mensagem").value
 
 let erro=document.getElementById("erro")
 
-if(nome=="" || email=="" || mensagem==""){
+if(nome==""||email==""||mensagem==""){
 
 erro.innerText="Preencha todos os campos."
 
