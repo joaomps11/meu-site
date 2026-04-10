@@ -192,3 +192,8 @@ cursor:pointer;
 .contact-form button:hover{
 opacity:0.85;
 }
+
+#statusMensagem{
+margin-top:10px;
+font-weight:500;
+}
