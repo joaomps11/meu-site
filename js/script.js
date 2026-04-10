@@ -1,24 +1,56 @@
-function toggleTema(){
+window.onload = function(){
 
-document.body.classList.toggle("dark")
+let savedTheme = localStorage.getItem("theme") || "dark"
+
+document.documentElement.classList.remove("dark","light")
+
+document.documentElement.classList.add(savedTheme)
+
+let btn = document.getElementById("themeBtn")
+
+if(btn){
+btn.innerText = savedTheme === "dark" ? "🌙" : "☀️"
+}
+
+let ano = document.getElementById("ano")
+
+if(ano){
+ano.textContent = new Date().getFullYear()
+}
 
 }
 
-function toggleMenu(){
+function toggleTheme(){
 
-let menu = document.getElementById("menu")
+let html = document.documentElement
 
-if(menu.style.display=="block"){
-menu.style.display="none"
+let btn = document.getElementById("themeBtn")
+
+if(html.classList.contains("dark")){
+
+html.classList.remove("dark")
+
+html.classList.add("light")
+
+localStorage.setItem("theme","light")
+
+btn.innerText="☀️"
+
 }else{
-menu.style.display="block"
-}
+
+html.classList.remove("light")
+
+html.classList.add("dark")
+
+localStorage.setItem("theme","dark")
+
+btn.innerText="🌙"
 
 }
 
-document.getElementById("ano").textContent = new Date().getFullYear()
+}
 
-document.getElementById("formContato").addEventListener("submit",function(e){
+document.getElementById("formContato")?.addEventListener("submit",function(e){
 
 e.preventDefault()
 
