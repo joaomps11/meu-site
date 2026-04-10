@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>João Marcos | Bio</title>
+<title>João Marcos</title>
+
+<script>
+(function(){
+let theme = localStorage.getItem("theme") || "dark";
+document.documentElement.classList.add(theme);
+})();
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -15,95 +24,147 @@
 
 <body>
 
-<header>
+<nav>
 
-<h1>João Marcos</h1>
+<strong>João Marcos</strong>
 
-<img src="img/sua-foto.jpg" class="foto">
+<div>
 
-<nav id="menu">
+<a href="#inicio">Início</a> <a href="#sobre">Sobre</a> <a href="#projetos">Projetos</a> <a href="#habilidades">Habilidades</a> <a href="#objetivo">Objetivo</a> <a href="#contato">Contato</a>
 
-<a href="#sobre">Sobre</a> <a href="#habilidades">Habilidades</a> <a href="#projetos">Projetos</a> <a href="#contato">Contato</a>
+<button onclick="toggleTheme()" id="themeBtn">🌙</button>
+
+</div>
 
 </nav>
 
-<button onclick="toggleMenu()">☰</button>
+<div id="inicio" class="hero">
 
-<button onclick="toggleTema()">Tema</button>
+<div class="hero-img">
+<img src="img/sua-foto.jpg">
+</div>
 
-</header>
+<div class="hero-text">
 
-<section id="sobre">
+<h1>João Marcos</h1>
+
+<p>Ciência da Computação - UNICAP</p>
+
+<p class="highlight">
+Desenvolvedor em formação, focado em transformar conhecimento em soluções práticas através da tecnologia.
+</p>
+
+</div>
+
+</div>
+
+<div id="sobre" class="section">
 
 <h2>Sobre Mim</h2>
 
 <p>
-Meu nome é João Marcos, tenho 19 anos e sou estudante de Ciência da Computação na UNICAP.
-Atualmente estou no terceiro período do curso e tenho interesse na área de tecnologia
-e desenvolvimento de software.
-
-Durante minha formação venho aprendendo linguagens como Python, Java e C,
-além de tecnologias voltadas para desenvolvimento web como HTML, CSS e JavaScript.
-
-Também já desenvolvi projetos envolvendo Raspberry Pi e criação de sites
-educacionais voltados para alfabetização de crianças.
-
-Gosto de aprender novas tecnologias, trabalhar em equipe e desenvolver
-soluções que possam ajudar pessoas através da tecnologia.
-
-Meu objetivo é evoluir cada vez mais na área de desenvolvimento
-e construir projetos cada vez mais completos.
-
+Sou estudante de Ciência da Computação na UNICAP, atualmente no 5º período,
+com sólida base em programação e desenvolvimento de sistemas.
 </p>
 
-</section>
+<p>
+Participei de projetos acadêmicos envolvendo desenvolvimento web e integração
+de hardware, aplicando conhecimentos em Python, Java, HTML, CSS e SQL.
+</p>
 
-<section id="habilidades">
+<p>
+Busco constantemente evoluir e construir soluções eficientes.
+</p>
 
-<h2>Habilidades</h2>
+</div>
 
-<ul>
-
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>Python</li>
-<li>Java</li>
-<li>Git e GitHub</li>
-
-</ul>
-
-</section>
-
-<section id="projetos">
+<div id="projetos" class="section">
 
 <h2>Projetos</h2>
 
-<div class="cards">
+<div class="projects">
 
-<div class="card">
-<h3>Projeto AFA</h3>
-<p>Site educacional voltado para alfabetização.</p>
-<a href="afa.html">Ver projeto</a>
-</div>
+<div class="project-card" onclick="location.href='afa.html'">
 
-<div class="card">
-<h3>Projeto Liceu</h3>
-<p>Projeto web educacional.</p>
-<a href="liceu.html">Ver projeto</a>
-</div>
+<h3>Projeto AFA – UNICAP</h3>
 
-<div class="card">
-<h3>Projeto Raspberry</h3>
-<p>Projeto utilizando Raspberry Pi.</p>
-<a href="raspberry.html">Ver projeto</a>
-</div>
+<p>Site institucional para alfabetização infantil.</p>
+
+<p><strong>Tecnologias:</strong> HTML, CSS, Vercel</p>
 
 </div>
 
-</section>
+<div class="project-card" onclick="location.href='raspberry.html'">
 
-<section id="contato">
+<h3>Raspberry Pi</h3>
+
+<p>Automação e integração hardware/software.</p>
+
+<p><strong>Tecnologias:</strong> Python</p>
+
+</div>
+
+<div class="project-card" onclick="location.href='liceu.html'">
+
+<h3>Projeto LICEU</h3>
+
+<p>Desenvolvimento front-end acadêmico.</p>
+
+<p><strong>Tecnologias:</strong> HTML, CSS</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="habilidades" class="section">
+
+<h2>Habilidades</h2>
+
+<div class="skills">
+
+<div class="skill-card">
+<h3>Python</h3>
+<p>Automação e integração com hardware.</p>
+</div>
+
+<div class="skill-card">
+<h3>Java</h3>
+<p>Programação orientada a objetos.</p>
+</div>
+
+<div class="skill-card">
+<h3>SQL</h3>
+<p>Manipulação de banco de dados.</p>
+</div>
+
+<div class="skill-card">
+<h3>HTML & CSS</h3>
+<p>Desenvolvimento de interfaces web.</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="objetivo" class="section">
+
+<h2>Objetivo Profissional</h2>
+
+<p>
+Busco oportunidades na área de desenvolvimento de software
+para aplicar meus conhecimentos.
+</p>
+
+<p>
+Pretendo atuar em empresas de grande porte ou multinacionais
+contribuindo com soluções tecnológicas.
+</p>
+
+</div>
+
+<div id="contato" class="section">
 
 <h2>Contato</h2>
 
@@ -121,9 +182,9 @@ e construir projetos cada vez mais completos.
 
 <p id="erro"></p>
 
-</section>
+</div>
 
-<footer>
+<footer class="section">
 
 <p>© <span id="ano"></span> João Marcos</p>
 
