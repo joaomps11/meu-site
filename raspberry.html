@@ -1,116 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Raspberry Pi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
-(function(){
-    let theme = localStorage.getItem("theme") || "dark";
-    document.documentElement.classList.add(theme);
-})();
-</script>
+<title>Projeto Raspberry Pi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;}
-
-.dark body{background:#020617;color:#e2e8f0;}
-.light body{background:#f8fafc;color:#0f172a;}
-
-nav{position:fixed;width:100%;top:0;padding:15px 10%;display:flex;justify-content:space-between;backdrop-filter:blur(10px);}
-.dark nav{background:rgba(2,6,23,0.8);}
-.light nav{background:rgba(255,255,255,0.8);}
-
-nav a{text-decoration:none;margin-left:20px;}
-.dark nav a{color:white;}
-.light nav a{color:#0f172a;}
-
-#themeBtn{margin-left:20px;padding:6px 10px;border:none;border-radius:8px;cursor:pointer;}
-
-.container{max-width:800px;margin:auto;padding:120px 20px;}
-
-h1{color:#38bdf8;margin-bottom:20px;}
-
-p{line-height:1.7;margin-bottom:15px;}
-
-.tech{background:#1e293b;padding:10px;border-radius:8px;display:inline-block;margin-top:10px;}
-.light .tech{background:#e2e8f0;color:#0f172a;}
-
-a.button{display:inline-block;margin-top:30px;margin-right:10px;color:#38bdf8;text-decoration:none;padding:10px 18px;border:1px solid #38bdf8;border-radius:8px;}
-a.button:hover{background:#38bdf8;color:white;}
-</style>
 </head>
 
 <body>
 
+<header>
+
+<h1>Projeto Raspberry Pi</h1>
+
 <nav>
-<strong>João Marcos</strong>
-<div>
-<a href="index.html">← Voltar</a>
-<button onclick="toggleTheme()" id="themeBtn">🌙</button>
-</div>
+<a href="index.html">Voltar para Home</a>
 </nav>
 
-<div class="container">
+</header>
 
-<h1>Integração de Hardware com Raspberry Pi</h1>
+<section>
 
-<p>
-Projeto acadêmico voltado ao desenvolvimento de um protótipo funcional de automação,
-utilizando Raspberry Pi e programação em Python.
-</p>
+<h2>Sobre o Projeto</h2>
 
 <p>
-O projeto envolveu a integração entre hardware e software, permitindo testes práticos
-de aplicações em Internet das Coisas (IoT), explorando comunicação entre dispositivos.
+Este projeto foi desenvolvido utilizando Raspberry Pi,
+um pequeno computador utilizado para experimentos e projetos
+de hardware e software.
+
+O objetivo foi explorar conceitos de programação e automação,
+permitindo controlar dispositivos e executar tarefas utilizando
+um sistema embarcado.
+
+Esse projeto proporcionou experiência prática com tecnologia
+e integração entre software e hardware.
+
 </p>
 
-<p>
-Durante o desenvolvimento, foram aplicados conceitos de sistemas embarcados,
-automação e controle de componentes físicos.
-</p>
+</section>
 
-<p>
-Essa experiência contribuiu para o desenvolvimento das minhas habilidades em integração
-entre software e hardware.
-</p>
+<footer>
 
-<div class="tech">Tecnologias: Raspberry Pi, Python</div>
+<p>© <span id="ano"></span> João Marcos</p>
 
-<div>
-<a class="button" href="index.html">← Voltar</a>
-</div>
+</footer>
 
-</div>
-
-<script>
-window.onload = function(){
-    let savedTheme = localStorage.getItem("theme") || "dark";
-    document.documentElement.classList.remove("dark","light");
-    document.documentElement.classList.add(savedTheme);
-
-    let btn = document.getElementById("themeBtn");
-    btn.innerText = savedTheme === "dark" ? "🌙" : "☀️";
-}
-
-function toggleTheme(){
-    let html = document.documentElement;
-    let btn = document.getElementById("themeBtn");
-
-    if(html.classList.contains("dark")){
-        html.classList.replace("dark","light");
-        localStorage.setItem("theme","light");
-        btn.innerText="☀️";
-    } else {
-        html.classList.replace("light","dark");
-        localStorage.setItem("theme","dark");
-        btn.innerText="🌙";
-    }
-}
-</script>
+<script src="js/script.js"></script>
 
 </body>
+
 </html>
