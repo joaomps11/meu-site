@@ -3,8 +3,12 @@ function validarEmail(email) {
     return email.includes("@") && email.includes(".");
 }
 
-function validarCampoVazio(valor) {
-    return valor && valor.trim() !== "";
+function validarCampoVazio(campo) {
+    if (!campo) {
+        return false;
+    }
+
+    return campo.trim() !== '';
 }
 
 function limitarTexto(texto, limite) {
